@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template
 from datetime import datetime
 
@@ -106,10 +107,10 @@ def showmess():
     return render_template('showmess.html', 
                            day=today,
                            week_type="Odd Week" if is_odd_week else "Even Week",
-                           breakfast="<br>".join(todays_menu.get('Breakfast', ["No breakfast available"])),
-                           lunch="<br>".join(todays_menu.get('Lunch', ["No lunch available"])),
-                           snacks="<br>".join(todays_menu.get('Snacks', ["No snacks available"])),
-                           dinner="<br>".join(todays_menu.get('Dinner', ["No dinner available"]))
+                           breakfast=" • "+"<br> • ".join(todays_menu.get('Breakfast', ["No breakfast available"])),
+                           lunch=" • "+"<br> • ".join(todays_menu.get('Lunch', ["No lunch available"])),
+                           snacks=" • "+"<br> • ".join(todays_menu.get('Snacks', ["No snacks available"])),
+                           dinner=" • "+"<br> • ".join(todays_menu.get('Dinner', ["No dinner available"]))
                           )
 
 if __name__ == '__main__':
