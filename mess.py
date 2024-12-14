@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from datetime import datetime
 
-web = Flask(__name__)
+app = Flask(__name__)
 
 odd_week_menu = {
     'Monday': {
@@ -94,28 +94,23 @@ even_week_menu = {
 }
 
 
-@web.route('/')
+@app.route('/')
 def showmess():
-    today = datetime.now().strftime('%A')  # gets the day
-    week_number = datetime.now().isocalendar()[1]  # gets the week number, from which we calc if it's odd or even
-    is_odd_week = week_number % 2 != 0  # odd week if the week number is not divisible by 2
+    today = datetime.now().strftime('%A')
+    week_number = datetime.now().isocalendar()[1]
+    is_odd_week = week_number % 2 != 0
 
-    menu = odd_week_menu if is_odd_week else even_week_menu  # deciding what menu should be used based on the week
-    todays_menu = menu.get(today, {})  # getting the menu for today
-    
-    if not todays_menu:
-        return "Menu not found for today!"
-    
-    # rendering everything
-    return render_template(
-        'showmess.html',
-        day=today,
-        week_type="Odd Week" if is_odd_week else "Even Week",
-        breakfast="<br>".join(todays_menu.get('Breakfast', ["No breakfast available"])),
-        lunch="<br>".join(todays_menu.get('Lunch', ["No lunch available"])),
-        snacks="<br>".join(todays_menu.get('Snacks', ["No snacks available"])),
-        dinner="<br>".join(todays_menu.get('Dinner', ["No dinner available"]))
-    )
+    menu = odd_week_menu if is_odd_week else even_week_menu
+    todays_menu = menu.get(today, {})
+
+    return render_template('showmess.html', 
+                           day=today,
+                           week_type="Odd Week" if is_odd_week else "Even Week",
+                           breakfast="<br>".join(todays_menu.get('Breakfast', ["No breakfast available"])),
+                           lunch="<br>".join(todays_menu.get('Lunch', ["No lunch available"])),
+                           snacks="<br>".join(todays_menu.get('Snacks', ["No snacks available"])),
+                           dinner="<br>".join(todays_menu.get('Dinner', ["No dinner available"]))
+                          )
 
 if __name__ == '__main__':
-    web.run(debug=True)
+    app.run(debug=True)
