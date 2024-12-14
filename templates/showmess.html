@@ -13,11 +13,6 @@
             color: #ffffff;
             margin: 0;
             padding: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
         }
 
         h1, h2, h3, h4 {
@@ -59,11 +54,11 @@
 
         .container {
             max-width: 800px;
+            margin: auto;
             padding: 15px;
             background-color: #1c1c1c;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            margin: auto; /* Center the container */
         }
 
         .content-section {
@@ -75,7 +70,6 @@
             font-size: 14px;
             margin-top: 40px;
             color: #888;
-            width: 100%; /* Ensure the footer spans the entire width */
         }
     </style>
 </head>
@@ -87,22 +81,22 @@
         <h3>Today's menu:</h3>
 
         <div class="content-section">
-            <h4>→ Breakfast:</h4>
+            <h4>Breakfast:</h4>
             <p>{{ breakfast|safe }}</p>
         </div>
 
         <div class="content-section">
-            <h4>→ Lunch:</h4>
+            <h4>Lunch:</h4>
             <p>{{ lunch|safe }}</p>
         </div>
 
         <div class="content-section">
-            <h4>→ Snacks:</h4>
+            <h4>Snacks:</h4>
             <p>{{ snacks|safe }}</p>
         </div>
 
         <div class="content-section">
-            <h4>→ Dinner:</h4>
+            <h4>Dinner:</h4>
             <p>{{ dinner|safe }}</p>
         </div>
     </div>
