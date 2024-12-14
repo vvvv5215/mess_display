@@ -71,6 +71,23 @@
             margin-top: 40px;
             color: #888;
         }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #0d47a1;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #064080;
+        }
     </style>
 </head>
 <body>
@@ -98,6 +115,10 @@
         <div class="content-section">
             <h4>Dinner:</h4>
             <p>{{ dinner|safe }}</p>
+        </div>
+        
+        <div class="content-section">
+            <a href="https://forms.gle/ATJttwfevm7fdpqh6" class="button">Today's Feedback!</a>
         </div>
     </div>
 
