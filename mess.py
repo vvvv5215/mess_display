@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-odd_week_menu = {
+even_week_menu = {
     'Monday': {
         'Breakfast': ['Pongal', 'Vada(2)', 'Sambar', 'G Chutney', 'Bbj', 'Sprouts', 'Banana(1)', 'Tea, Coffee, Milk, Sugar, Salt'],
         'Lunch': ['Bhindi Fry', 'Rice', 'Sambar', 'Rasam', 'Curd', 'Gongura Pickle', 'Papad'],
@@ -49,7 +49,7 @@ odd_week_menu = {
     }
 }
 
-even_week_menu = {
+odd_week_menu = {
     'Monday': {
         'Breakfast': ['Pesarattu', 'Upma', 'Sambar', 'G Chutney', 'Bbj', 'Peanuts/Poridge', 'Banana(1)', 'Tea, Coffee, Milk, Sugar, Salt'],
         'Lunch': ['Aloo Masala Wedges', 'Rice', 'Vathakolambu', 'Curd', 'Fryums', 'Gongura Pickle'],
